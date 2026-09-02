@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas & Agua en Polvo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="hojaDeEstido.css">
+</head>
+<body>
+
+    <header class="bg-danger text-white text-center py-4">
+        <h1>Refrescos Express</h1>
+        <p>Tu tienda exclusiva de Coca-Cola y productos innovadores</p>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Menú</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="target" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#coca-cola">Selección Coca-Cola</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#agua-polvo">Agua en Polvo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        
+        <section id="coca-cola" class="mb-5">
+            <h2 class="text-center mb-4">La Selección Clásica de Coca-Cola</h2>
+            <div class="row">
+                <article class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://via.placeholder.com/300x200?text=Coca+Cola+Original" class="card-img-top" alt="Coca-Cola Original">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Coca-Cola Original</h3>
+                            <p class="card-text">El sabor clásico e inconfundible de siempre.</p>
+                            <button class="btn btn-danger w-100">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://via.placeholder.com/300x200?text=Coca+Cola+Zero" class="card-img-top" alt="Coca-Cola Zero">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Coca-Cola Zero</h3>
+                            <p class="card-text">Todo el sabor, cero azúcar.</p>
+                            <button class="btn btn-danger w-100">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://via.placeholder.com/300x200?text=Sprite" class="card-img-top" alt="Sprite">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Sprite</h3>
+                            <p class="card-text">Refrescante sabor lima-limón.</p>
+                            <button class="btn btn-success w-100">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="agua-polvo" class="mb-5 my-5">
+            <h2 class="text-center mb-4 text-primary">¡Novedad Exclusiva: Agua en Polvo!</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <article>
+                        <h3>¿Qué es el Agua en Polvo?</h3>
+                        <p>Nuestro producto estrella. Solo tienes que añadir agua y... ¡listo! Tienes agua perfectamente hidratante. Ideal para campistas, astronautas o personas con mucho sentido del humor.</p>
+                        <button class="btn btn-primary btn-lg mt-3">Comprar ahora</button>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <div class="ratio ratio-16x9 shadow rounded">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="contacto" class="my-5">
+            <h2 class="text-center mb-4">Contáctanos para Pedidos Especiales</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="contactForm" class="bg-light p-4 rounded shadow-sm" novalidate>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ej: Juan Pérez" required>
+                            <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required>
+                            <div class="invalid-feedback">Ingresa un correo válido.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje o Sugerencia</label>
+                            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe aquí tu consulta..." required></textarea>
+                            <div class="invalid-feedback">El mensaje no puede estar vacío.</div>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Enviar Consulta</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Refrescos Express - Proyecto Fullstack II.</p>
+            <p class="small text-muted">Todos los derechos reservados. <a href="#" class="text-white">Términos y condiciones</a> | <a href="#" class="text-white">Política de Privacidad</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
