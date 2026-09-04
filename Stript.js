@@ -28,3 +28,5 @@ boton_comprar.addEventListener("click", () =>{
 
     alert(h3_nombre.textContent.trim() + "\nStock: "  + stock )
 })
+
+
