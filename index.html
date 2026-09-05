@@ -50,7 +50,7 @@
                         <div class="card-body">
                             <h3 class="card-title h5">Coca-Cola Original</h3>
                             <p class="card-text">El sabor clásico e inconfundible de siempre.</p>
-                            <button class="btn btn-danger w-100">Añadir al carrito</button>
+                            <button class="btn btn-danger w-100 btn-agregar" data-nombre="Coca-Cola Original" data-precio="2500" data-img="img/Coca-Cola.jpg">Añadir al carrito</button>
                         </div>
                     </div>
                 </article>
@@ -60,9 +60,7 @@
                         <div class="card-body">
                             <h3 class="card-title h5">Coca-Cola Zero</h3>
                             <p class="card-text">Todo el sabor, cero azúcar.</p>
-                            <button class="btn btn-danger w-100 btn-agregar"
-                                    data-nombre="Coca-Cola Zero"
-                                    data-precio="2500">Añadir al carrito</button>
+                            <button class="btn btn-danger w-100 btn-agregar" data-nombre="Coca-Cola Zero" data-precio="2500" data-img="img/Coca-zero.jpg">Añadir al carrito</button>
                         </div>
                     </div>
                 </article>
@@ -72,9 +70,7 @@
                         <div class="card-body">
                             <h3 class="card-title h5">Sprite</h3>
                             <p class="card-text">Refrescante sabor lima-limón.</p>
-                            <button class="btn btn-danger w-100 btn-agregar"
-                                    data-nombre="Coca-Cola Zero"
-                                    data-precio="2500">Añadir al carrito</button>
+                            <button class="btn btn-success w-100 btn-agregar" data-nombre="Sprite" data-precio="2200" data-img="img/Sprite.jpg">Añadir al carrito</button>
                         </div>
                     </div>
                 </article>
@@ -82,6 +78,7 @@
         </section>
 
         <hr>
+        
 
         <section id="agua-polvo" class="mb-5 my-5">
             <h2 class="text-center mb-4 text-primary">¡Novedad Exclusiva: Agua en Polvo!</h2>
@@ -90,13 +87,12 @@
                     <article>
                         <h3>¿Qué es el Agua en Polvo?</h3>
                         <p>Nuestro producto estrella. Solo tienes que añadir agua y... ¡listo! Tienes agua perfectamente hidratante. Ideal para campistas, astronautas o personas con mucho sentido del humor.</p>
-                        <button class="btn btn-primary btn-lg mt-3">Comprar ahora</button>
+                        <button class="btn btn-primary btn-lg mt-3 btn-agregar" data-nombre="Agua en Polvo" data-precio="5000" data-img="img/AguaEnPolvo.jpeg">Comprar ahora</button>
                     </article>
                 </div>
-                <div class="col-md-6">
-                    <div class="ratio ratio-16x9 shadow rounded">
-                        
-                    </div>
+                <div class="col-md-6 text-center">
+                    <!-- Usamos img-fluid para que sea responsiva, y shadow/rounded para el estilo -->
+                    <img id="AguaEnPolvo" src="img/AguaEnPolvo.jpeg" class="img-fluid rounded shadow" alt="Agua en Polvo">
                 </div>
             </div>
         </section>

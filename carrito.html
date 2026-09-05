@@ -6,7 +6,7 @@
     <title>Carrito de Compras - Refrescos Express</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Hoja de estilos externa -->
+    <!-- Hoja de estilos externa requerida -->
     <link rel="stylesheet" href="hojaDeEstido.css">
 </head>
 <body class="bg-light">
@@ -26,7 +26,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <!-- Hipervínculo funcional para volver al inicio -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Volver a la Tienda</a>
                     </li>
@@ -42,50 +41,26 @@
     <main class="container my-5">
         <div class="row">
             
-            <!-- Sección de los productos en el carrito -->
+            <!-- Sección Izquierda: Productos (Se llena con JS) -->
             <section class="col-lg-8 mb-4">
                 <h2 class="mb-4">Productos seleccionados</h2>
                 
-                <!-- Artículo 1: Coca-Cola -->
-                <section class ="col-lg-8 mb-4">
-                    <h2 class="mb-4">Productos seleccionados</h2>
-                    <div id="contenedor-carrito">
-                
-                    </div>
-                </section>
-
-                <!-- Artículo 2: Agua en Polvo -->
-                <article class="card shadow-sm mb-3 border-primary">
-                    <div class="row g-0 align-items-center p-3">
-                        <div class="col-md-2 text-center">
-                            <img src="https://via.placeholder.com/100x100?text=Agua" class="img-fluid rounded" alt="Agua en Polvo">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-body">
-                                <h3 class="card-title h5 text-primary">Agua en Polvo (Premium)</h3>
-                                <p class="card-text text-muted">Solo agregue agua</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <input type="number" class="form-control" value="1" min="1" title="Cantidad">
-                        </div>
-                        <div class="col-md-2 text-end">
-                            <strong>$5.000</strong>
-                            <button class="btn btn-sm btn-outline-danger mt-2">Eliminar</button>
-                        </div>
-                    </div>
-                </article>
+                <!-- AQUÍ ES DONDE JAVASCRIPT INYECTARÁ LAS TARJETAS BOOTSTRAP -->
+                <div id="contenedor-carrito">
+                    <!-- Si está vacío, JS pondrá el mensaje aquí. Si tiene productos, JS dibujará los <article> de Bootstrap -->
+                </div>
             </section>
 
-            <!-- Sección del Resumen de Compra -->
+            <!-- Sección Derecha: Resumen de Compra -->
             <section class="col-lg-4">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm border-light">
                     <div class="card-body">
                         <h2 class="card-title h4 mb-4">Resumen de tu pedido</h2>
                         
                         <div class="d-flex justify-content-between mb-2">
                             <span>Subtotal</span>
-                            <span>$7.500</span>
+                            <!-- ID para que JS actualice el precio -->
+                            <span id="subtotal-carrito">$0</span>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
                             <span>Envío</span>
@@ -94,20 +69,21 @@
                         <hr>
                         <div class="d-flex justify-content-between mb-4">
                             <strong>Total a Pagar</strong>
-                            <strong>$7.500</strong>
+                            <!-- ID para que JS actualice el total -->
+                            <strong id="total-carrito">$0</strong>
                         </div>
 
-                        <!-- Formulario para cupón de descuento (Interactividad) -->
+                        <!-- Formulario interactivo (Cupón) -->
                         <form id="cuponForm" class="mb-4" novalidate>
                             <label for="cupon" class="form-label small">¿Tienes un código de descuento?</label>
                             <div class="input-group">
                                 <input type="text" id="cupon" class="form-control" placeholder="Ej: DUOC2026" required>
                                 <button type="submit" class="btn btn-secondary">Aplicar</button>
-                                <div class="invalid-feedback">Por favor, ingresa un código válido.</div>
                             </div>
                         </form>
 
-                        <button class="btn btn-success w-100 btn-lg">Proceder al Pago</button>
+                        <!-- Botón para ir a pagar -->
+                        <a href="pago.html" class="btn btn-success w-100 btn-lg" id="btn-pagar">Proceder al Pago</a>
                     </div>
                 </div>
             </section>

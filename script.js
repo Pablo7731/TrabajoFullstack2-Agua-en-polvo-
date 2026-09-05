@@ -23,3 +23,4 @@ botonesAgregar.forEach((boton) =>{
         }
     });
 });
+

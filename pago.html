@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Seguro - Refrescos Express</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="hojaDeEstido.css">
+</head>
+<body class="bg-light">
+
+    <!-- Encabezado -->
+    <header class="bg-danger text-white text-center py-4">
+        <h1>Refrescos Express</h1>
+        <p>Proceso de Pago Seguro</p>
+    </header>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Menú Principal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="target" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Volver a la Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Mi Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="pago.html">Pago</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            
+            <section class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h2 class="card-title h4 mb-4 text-center">Detalles de Pago</h2>
+                        
+                        <!-- Formulario de Pago (Requiere validación JS) -->
+                        <form id="formularioPago" class="needs-validation" novalidate>
+                            
+                            <!-- Selección de tipo de tarjeta -->
+                            <fieldset class="mb-4">
+                                <legend class="h6">Método de Pago</legend>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipoTarjeta" id="tarjetaCredito" value="credito" required>
+                                    <label class="form-check-label" for="tarjetaCredito">Tarjeta de Crédito</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipoTarjeta" id="tarjetaDebito" value="debito" required>
+                                    <label class="form-check-label" for="tarjetaDebito">Tarjeta de Débito</label>
+                                </div>
+                                <!-- Mensaje de error para los radio buttons -->
+                                <div class="invalid-feedback d-block" id="errorTipoTarjeta" style="display: none;">
+                                    Por favor, selecciona un método de pago.
+                                </div>
+                            </fieldset>
+
+                            <div class="row g-3">
+                                <!-- Nombre en la tarjeta -->
+                                <div class="col-md-12">
+                                    <label for="nombreTarjeta" class="form-label">Nombre titular de la tarjeta</label>
+                                    <!-- Uso de autocomplete requerido por la rúbrica -->
+                                    <input type="text" class="form-control" id="nombreTarjeta" autocomplete="cc-name" placeholder="Ej: JUAN PEREZ" required>
+                                    <div class="invalid-feedback">El nombre en la tarjeta es obligatorio.</div>
+                                    <small class="text-muted">Tal como aparece impreso en la tarjeta</small>
+                                </div>
+
+                                <!-- Número de tarjeta -->
+                                <div class="col-md-12">
+                                    <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
+                                    <input type="text" class="form-control" id="numeroTarjeta" autocomplete="cc-number" placeholder="1111-2222-3333-4444" maxlength="19" required>
+                                    <div class="invalid-feedback">Ingresa un número de tarjeta válido (16 dígitos).</div>
+                                </div>
+
+                                <!-- Fecha de expiración -->
+                                <div class="col-md-6">
+                                    <label for="expiracionTarjeta" class="form-label">Fecha de Expiración</label>
+                                    <input type="text" class="form-control" id="expiracionTarjeta" autocomplete="cc-exp" placeholder="MM/AA" maxlength="5" required>
+                                    <div class="invalid-feedback">Fecha de expiración requerida.</div>
+                                </div>
+
+                                <!-- CVV -->
+                                <div class="col-md-6">
+                                    <label for="cvvTarjeta" class="form-label">Código de Seguridad (CVV)</label>
+                                    <input type="text" class="form-control" id="cvvTarjeta" autocomplete="cc-csc" placeholder="123" maxlength="3" required>
+                                    <div class="invalid-feedback">Código de seguridad inválido.</div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <!-- Botón de confirmación -->
+                            <button class="btn btn-primary w-100 btn-lg" type="submit">Confirmar Pago de $7.500</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer informativo -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Refrescos Express - Proyecto Fullstack II.</p>
+            <p class="small text-muted">Pago 100% seguro. <a href="#" class="text-white">Política de Privacidad</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tu archivo JavaScript para las validaciones -->
+    <script src="script.js"></script>
+</body>
+</html>
