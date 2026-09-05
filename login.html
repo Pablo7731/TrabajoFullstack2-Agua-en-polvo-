@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - Refrescos Express</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="hojaDeEstido.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Encabezado simple -->
+    <header class="bg-danger text-white text-center py-4">
+        <h1>Refrescos Express</h1>
+        <p>Inicia sesión o entra como invitado para comenzar</p>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5 flex-grow-1">
+        
+        <!-- Botón de Invitado -->
+        <section class="text-center mb-5">
+            <h2 class="h4 mb-3">¿Solo quieres mirar?</h2>
+            <a href="index.html" class="btn btn-outline-dark btn-lg px-5 rounded-pill shadow-sm">
+                Ingresar como Invitado
+            </a>
+        </section>
+
+        <hr class="mb-5">
+
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Sección: Iniciar Sesión -->
+            <section class="col-md-6 col-lg-5">
+                <article class="card shadow-sm h-100 border-0">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h4 mb-4 text-center">Iniciar Sesión</h2>
+                        <!-- Formulario con autocompletar y validaciones -->
+                        <form id="formLogin" novalidate>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="loginEmail" autocomplete="username" placeholder="tu@correo.com" required>
+                                <div class="invalid-feedback">Ingresa un correo válido.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="loginPassword" autocomplete="current-password" required>
+                                <div class="invalid-feedback">La contraseña es obligatoria.</div>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100 mt-3">Entrar</button>
+                        </form>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Sección: Crear Cuenta -->
+            <section class="col-md-6 col-lg-5">
+                <article class="card shadow-sm h-100 border-0 bg-dark text-white">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h4 mb-4 text-center">Crear Usuario</h2>
+                        <!-- Formulario de registro -->
+                        <form id="formRegistro" novalidate>
+                            <div class="mb-3">
+                                <label for="registroNombre" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control bg-dark text-white" id="registroNombre" autocomplete="name" placeholder="Ej: Juan Pérez" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registroEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control bg-dark text-white" id="registroEmail" autocomplete="email" placeholder="tu@correo.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registroPassword" class="form-label">Crea una Contraseña</label>
+                                <input type="password" class="form-control bg-dark text-white" id="registroPassword" autocomplete="new-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-light w-100 mt-3">Registrarse</button>
+                        </form>
+                    </div>
+                </article>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer informativo -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="mb-0 small">&copy; 2026 Refrescos Express - Proyecto Fullstack II.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

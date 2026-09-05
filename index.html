@@ -20,8 +20,9 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="target" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Menú de Navegación -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto"> <!-- me-auto empuja los elementos a la izquierda -->
                     <li class="nav-item">
                         <a class="nav-link active" href="#coca-cola">Selección Coca-Cola</a>
                     </li>
@@ -31,11 +32,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="carrito.html">Mi Carrito</a>
-                    </li>
                 </ul>
+                <!-- NUEVO BOTÓN: Iniciar Sesión / Registro y Carrito -->
+                <div class="d-flex gap-2 align-items-center mt-3 mt-lg-0">
+                    <a href="carrito.html" class="btn btn-outline-light btn-sm">🛒 Mi Carrito</a>
+                    <a href="login.html" class="btn btn-light btn-sm fw-bold">Iniciar Sesión / Registro</a>
+                </div>
             </div>
+            
         </div>
     </nav>
 
