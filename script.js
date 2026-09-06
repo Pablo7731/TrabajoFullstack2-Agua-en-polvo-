@@ -249,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (subtotalCarrito) subtotalCarrito.textContent = `$${totalCalculado.toLocaleString('es-CL')}`;
         if (totalCarrito) totalCarrito.textContent = `$${totalCalculado.toLocaleString('es-CL')}`;
+        localStorage.setItem('totalFinalPagar', totalCalculado);
     };
 
     window.eliminarDelCarrito = (index) => {
@@ -284,7 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 let descuento = subtotalNum * 0.20;
                 let totalConDescuento = subtotalNum - descuento;
                 if (totalCarrito) totalCarrito.textContent = `$${totalConDescuento.toLocaleString('es-CL')} (20% Desc.)`;
-                alert('¡Cupón applied con éxito! Tienes un 20% de descuento.');
+                
+                // Actualizar el monto en localStorage con el descuento aplicado
+                localStorage.setItem('totalFinalPagar', totalConDescuento);
+                
+                alert('¡Cupón aplicado con éxito! Tienes un 20% de descuento.');
             } else {
                 alert('Código de cupón no válido.');
             }
@@ -341,6 +346,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const formularioPago = document.getElementById('formularioPago');
     
     if (formularioPago) {
+        // --- NUEVO: Actualizar el monto en el botón de pago al cargar la página ---
+        const botonConfirmar = formularioPago.querySelector('button[type="submit"]');
+        if (botonConfirmar) {
+            // Recuperar el total (ya sea con o sin descuento) desde el localStorage
+            let totalAPagar = localStorage.getItem('totalFinalPagar') || 0;
+            // Escribir el total en el botón, dándole el formato de moneda chilena
+            botonConfirmar.textContent = `Confirmar Pago de $${parseInt(totalAPagar).toLocaleString('es-CL')}`;
+        }
+        // --------------------------------------------------------------------------
+
         formularioPago.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -401,7 +416,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 formularioPago.classList.add('was-validated');
             } else {
                 alert('¡Pago realizado con éxito! Gracias por tu compra.');
+                
+                // --- NUEVO: Limpiamos carrito y total para futuras compras ---
                 localStorage.removeItem('carrito');
+                localStorage.removeItem('totalFinalPagar');
+                
                 window.location.href = 'index.html';
             }
         });
